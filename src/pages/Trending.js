@@ -48,7 +48,7 @@ export default function Trending() {
             <section className="py-6">
             {coins ? coins?.map((coin) => (
             <NavLink to={`/details/${coin.id}`} key={coin.id}>
-                <div className="grid gap-2 grid-cols-3 md:grid-cols-4 text-left text-slate-50 font-light text-sm md:text-lg lg:text-xl my-6 py-6 px-2 rounded-xl cursor-pointer hover:bg-slate-900 ease-in-out duration-200">
+                <div className="grid gap-2 grid-cols-3 md:grid-cols-4 text-left text-slate-50 font-light text-sm md:text-lg lg:text-xl my-6 py-6 px-2 rounded-xl cursor-pointer hover:bg-slate-900 ease-in-out duration-200 border-b-2 border-gray-800/70">
                     <div className="flex items-center space-x-2">
                         <img className="w-6 h-6 md:w-16 md:h-16 object-cover" src={coin.image} alt={`${coin.name} logo`} />
                         <div className="">
@@ -71,7 +71,7 @@ export default function Trending() {
                     {/* 24h change */}
                     <div className="hidden md:inline-block flex-col items-center">
                         <p>24h change</p>
-                        <p className={coin.market_cap_change_percentage_24h > 0 ? "font-semibold flex items-center text-green-200" : "font-semibold flex items-center text-red-200"}>% {" "}{coin.market_cap_change_percentage_24h.toFixed(2)}</p>
+                        <p className={coin.market_cap_change_percentage_24h > 0 ? "font-semibold flex items-center text-green-200" : "font-semibold flex items-center text-red-300"}>% {" "}{coin.market_cap_change_percentage_24h.toFixed(2)}</p>
                     </div>
                     {/* end 24h change */}
                 </div>

@@ -11,7 +11,7 @@ export default function Homepage() {
     <div className="w-full min-h-screen bg-slate-900">
         <Jumbotron/>
         <TopCoins/>
-        {features.map(item => <FeaturedSection key={item.text} heading={item.heading} text={item.text} image={item.image} reverse={item.reverse} path={item.path} />)}
+        {features.map(item => <FeaturedSection key={item.text} heading={item.heading} text={item.text} image={item.image} reverse={item.reverse} path={item.path} subHeading={item.subHeading} extendedText={item.extendedText} highlights={item.highlights} />)}
         <BigFeature/>
         <Partners/>
     </div>

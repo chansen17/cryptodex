@@ -11,7 +11,7 @@ export default function Header() {
                 <Link to="/">
                     <h2 className="text-3xl font-semibold tracking-wide flex items-center">
                         <FaCoins className="mr-2" color="cyan"/>
-                        <span className="hidden md:flex"></span>
+                        <span className="hidden md:flex">Cryptodex</span>
                     </h2>
                 </Link>
             </div>

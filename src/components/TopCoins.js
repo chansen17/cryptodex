@@ -35,7 +35,7 @@ export default function TopCoins() {
   return (
     <div className="w-full min-h-[30vh]">
         <h2 className="text-2xl md:text-3xl heading-gradient py-6">Top coins</h2>
-        <div className="ax-w-[800px] md:max-w-[100%] mx-auto overflow-x-scroll scrollbar-hide whitespace-nowrap p-5 flex md:justify-center space-x-5">
+        <div className="w-2xl flex items-center justify-center flex-wrap">
             <div className="max-w-md w-full p-5">
                 <div className="flex flex-col items-center space-y-2 relative">
                     <img className="w-8 h-8 md:w-12 md:h-12 object-cover" src={btc.image?.small} alt="" />

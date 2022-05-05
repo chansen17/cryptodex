@@ -6,6 +6,7 @@ import Faq from './pages/Faq';
 import Trending from './pages/Trending';
 import Watchlist from './pages/Watchlist';
 import CoinDetails from './pages/CoinDetails';
+import FeatureDetails from './pages/FeatureDetails';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
           <Route exact path="/watchlist" element={<Watchlist/>} />
           <Route exact path="/faq" element={<Faq/>} />
           <Route exact path="/details/:id" element={<CoinDetails/>} />
+          <Route exact path="/fast-money" element={<FeatureDetails/>}/>
+          <Route exact path="/the-future" element={<FeatureDetails/>}/>
+          <Route exact path="/going-green" element={<FeatureDetails/>}/>
+          <Route exact path="/support" element={<FeatureDetails/>}/>
         </Routes>
       </Router>
     </div>
