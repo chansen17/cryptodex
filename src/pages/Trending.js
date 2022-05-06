@@ -2,28 +2,33 @@ import { useState, useEffect } from 'react';
 import {NavLink } from 'react-router-dom';
 import { useWindowWidth } from '@react-hook/window-size'
 import { FaDollarSign, FaPercent, FaPercentage } from 'react-icons/fa';
-
-import { Doughnut } from 'react-chartjs-2';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function Trending() {
     const width = useWindowWidth();
     const [coins, setCoins] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const fetchCoins = async () => {
+        setLoading(true);
         // check if coins exists in local storage
         const check = localStorage.getItem('coins');
         // if coins do exist in local storage, parse items and set as state ELSE create new local storage items
         if(check) {
             setCoins(JSON.parse(check));
+            setLoading(false);
             console.log('coins in local storage', coins);
         }
         else {
+            setLoading(true);
             const response = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`);
             const data = await response.json();
 
             // create new local storage
             localStorage.setItem('coins', JSON.stringify(data));
             setCoins(data);
+            setLoading(false);
             console.log('created coins in local storage', coins);
         }
     }
@@ -32,9 +37,11 @@ export default function Trending() {
         fetchCoins();
     }, []);
 
+
         
   return (
-    <div className="w-full bg-slate-900 min-h-screen">
+    <div className="w-full bg-slate-900 min-h-screen relative">
+        <div className="fixed bottom-0 w-full h-[15vh] bg-gradient-to-t from-slate-900" />
         <div id="container" className="max-w-[1500px] mx-auto p-5">
             <div className="max-w-5xl mx-auto my-12">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold"><span className="text-gray-200">The Easiest Way to</span> <br/> <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-green-300">Track Multiple Currencies</span></h2>
@@ -48,9 +55,9 @@ export default function Trending() {
             <section className="py-6">
             {coins ? coins?.map((coin) => (
             <NavLink to={`/details/${coin.id}`} key={coin.id}>
-                <div className="grid gap-2 grid-cols-3 md:grid-cols-4 text-left text-slate-50 font-light text-sm md:text-lg lg:text-xl my-6 py-6 px-2 rounded-xl cursor-pointer hover:bg-slate-900 ease-in-out duration-200 border-b-2 border-gray-800/70">
-                    <div className="flex items-center space-x-2">
-                        <img className="w-6 h-6 md:w-16 md:h-16 object-cover" src={coin.image} alt={`${coin.name} logo`} />
+                <div className="grid gap-2 grid-cols-3 md:grid-cols-4 text-left text-slate-50 font-light text-sm md:text-lg lg:text-xl my-6 py-6 px-2 rounded-xl cursor-pointer border-b-2 border-gray-800/70 hover:border-gray-700/70">
+                    <div className="flex items-center space-x-4">
+                        <img className="w-6 h-6 md:w-12 md:h-12 object-cover" src={coin.image} alt={`${coin.name} logo`} />
                         <div className="">
                             <p className="font-semibold uppercase">{coin.symbol}</p>
                             <p>{coin.name}</p>
@@ -70,13 +77,15 @@ export default function Trending() {
                     {/* end marketcap */}
                     {/* 24h change */}
                     <div className="hidden md:inline-block flex-col items-center">
-                        <p>24h change</p>
-                        <p className={coin.market_cap_change_percentage_24h > 0 ? "font-semibold flex items-center text-green-200" : "font-semibold flex items-center text-red-300"}>% {" "}{coin.market_cap_change_percentage_24h.toFixed(2)}</p>
+                        <p className="flex justify-end">24h change</p>
+                        <p className={coin.market_cap_change_percentage_24h > 0 ? "font-semibold flex items-center justify-end text-green-200" : "font-semibold flex items-center justify-end text-red-300"}>% {" "}{coin.market_cap_change_percentage_24h.toFixed(2)}</p>
                     </div>
                     {/* end 24h change */}
                 </div>
             </NavLink>
-            )) : "skeleton.."}
+            )) : <div>
+                <Skeleton count={3} baseColor="#cecece" />
+            </div> }
             </section>
         </div>
     </div>

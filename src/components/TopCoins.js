@@ -33,28 +33,34 @@ export default function TopCoins() {
       }, []);
       
   return (
-    <div className="w-full min-h-[30vh]">
-        <h2 className="text-2xl md:text-3xl heading-gradient py-6">Top coins</h2>
-        <div className="w-2xl flex items-center justify-center flex-wrap">
-            <div className="max-w-md w-full p-5">
+    <div className="w-full min-h-[40vh] bg-slate-800 text-gray-300 p-5">
+          <h2 className="text-2xl md:text-3xl heading-gradient py-6">Top coins</h2>
+        <section className="max-w-[1360px] mx-auto grid md:grid-cols-2">
+        <div className="md:text-left">
+          <h2 className="text-3xl md:text-4xl">Lorem, ipsum dolor.</h2>
+          <p className="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, aspernatur dicta? Dolores dolore aut molestiae aliquam.</p>
+        </div>
+        <div className="flex items-center justify-center flex-wrap space-x-6 my-6 md:my-0">
+            <div className="">
                 <div className="flex flex-col items-center space-y-2 relative">
                     <img className="w-8 h-8 md:w-12 md:h-12 object-cover" src={btc.image?.small} alt="" />
-                    <h2 className="flex items-center text-gray-600 text-2xl md:text-3xl"><FaDollarSign/>{btc.market_data?.current_price?.usd.toLocaleString()}</h2>
+                    <h2 className="flex items-center text-gray-300 text-2xl md:text-3xl"><FaDollarSign/>{btc.market_data?.current_price?.usd.toLocaleString()}</h2>
                 </div>
             </div>
-            <div className="max-w-md w-full p-5">
+            <div className="">
                 <div className="flex flex-col items-center space-y-2 relative">
                     <img className="w-8 h-8 md:w-12 md:h-12 object-cover" src={eth.image?.small} alt="" />
-                    <h2 className="flex items-center text-gray-600 text-2xl md:text-3xl"><FaDollarSign/>{eth.market_data?.current_price?.usd.toLocaleString()}</h2>
+                    <h2 className="flex items-center text-gray-300 text-2xl md:text-3xl"><FaDollarSign/>{eth.market_data?.current_price?.usd.toLocaleString()}</h2>
                 </div>
             </div>
-            <div className="max-w-md w-full p-5">
+            <div className="">
                 <div className="flex flex-col items-center space-y-2 relative">
                     <img className="w-8 h-8 md:w-12 md:h-12 object-cover" src={xrp.image?.small} alt="" />
-                    <h2 className="flex items-center text-gray-600 text-2xl md:text-3xl"><FaDollarSign/>{xrp.market_data?.current_price?.usd.toLocaleString()}</h2>
+                    <h2 className="flex items-center text-gray-300 text-2xl md:text-3xl"><FaDollarSign/>{xrp.market_data?.current_price?.usd.toLocaleString()}</h2>
                 </div>
-            </div>
-        </div>
+              </div>
+          </div>
+        </section>
     </div>
   )
 }

@@ -26,7 +26,7 @@ export default function Header() {
                     <Link to="/faq"><span className="font-medium tracking-wide text-lg"><button className="text-white">F.A.Qs</button></span></Link>
                 </li>
                 <li className="flex md:hidden p-2 cursor-pointer">
-                    <button className="text-white text-2xl"><FaBars/></button>
+                    <div className="nav-btn"><FaBars/></div>
                 </li>
             </ul>
         </div>
