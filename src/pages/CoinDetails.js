@@ -30,12 +30,12 @@ export default function CoinDetails() {
         const response = await fetch(`https://api.coingecko.com/api/v3/coins/${name}`);
         const data = await response.json();
         setCoin(data);
-        console.log('coin details', coin);
     }
     
     useEffect(() => {
         fetchCoinPrices(params.id);
         fetchCoinDetails(params.id);
+        console.log('coin details', coin);
     }, [params.id]);
 
 
@@ -53,7 +53,7 @@ export default function CoinDetails() {
         <p className="text-xl">({coin.symbol})</p>
         <div className="max-w-2xl mx-auto">
             <div className="flex items-center justify-between">
-                
+                {/* <p className="text-center">{coin?.description.en && coin.description.en}</p> */}
             </div>
         </div>
        </div>

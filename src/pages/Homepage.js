@@ -12,7 +12,7 @@ export default function Homepage() {
     <div className="w-full min-h-screen bg-slate-900">
         <Jumbotron/>
         <TopCoins/>
-        <SectionSeperator heading="Check out who we are and where were going" subHeading="and learn about our future plans." />
+        <SectionSeperator heading="Check out who we are and where were going" subHeading="Learn about our future plans" />
         {features.map(item => <FeaturedSection key={item.text} heading={item.heading} text={item.text} image={item.image} reverse={item.reverse} path={item.path} subHeading={item.subHeading} extendedText={item.extendedText} highlights={item.highlights} sectionTitle={item.sectionTitle} />)}
         <BigFeature/>
         <Partners/>
