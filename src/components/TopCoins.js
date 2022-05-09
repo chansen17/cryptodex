@@ -9,26 +9,26 @@ export default function TopCoins() {
   const [xrp, setXrp] = useState('');
 
     const fetchBtc = async () => {
-        const response = await fetch(`https://api.coingecko.com/api/v3/coins/bitcoin`);
+        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.coingecko.com/api/v3/coins/bitcoin`);
         const data = await response.json();
         setBtc(data)
       }
     
       const fetchEth = async () => {
-        const response = await fetch(`https://api.coingecko.com/api/v3/coins/ethereum`);
+        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.coingecko.com/api/v3/coins/ethereum`);
         const data = await response.json();
         setEth(data)
       }
     
       const fetchXrp = async () => {
-        const response = await fetch(`https://api.coingecko.com/api/v3/coins/ripple`);
+        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.coingecko.com/api/v3/coins/ripple`);
         const data = await response.json();
         setXrp(data)
       }
 
       const fetchAll = () => {
         const fetchBtc = async () => {
-          const response = await fetch(`https://api.coingecko.com/api/v3/coins/bitcoin`);
+          const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.coingecko.com/api/v3/coins/bitcoin`);
           const data = await response.json();
           setBtc(data)
         }

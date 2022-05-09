@@ -9,7 +9,7 @@ export default function BigFeature() {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl heading-gradient">Research coins with real data</h2>
                 <p className="text-xl text-gray-400 italic py-4">Informed decisions make for better investments.</p>
                 <Link to="trending">
-                    <button>Get started</button>
+                    <button className="main-btn">Get started</button>
                 </Link>
             </div>
             <div className="max-w-[960px]">

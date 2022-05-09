@@ -18,7 +18,7 @@ export default function FeaturedSection({heading, text, image, reverse, path, hi
                     <div data-aos="zoom-in-right" data-aos-duration="400" className="p-5 space-y-3 max-w-lg mx-auto">
                       <h2 className="text-4xl heading-gradient">{heading}</h2>
                       <p className="text-xl md:text-2xl text-gray-400">{text}</p>
-                      <Link state={{heading, text, image, reverse, path, highlights, extendedText, subHeading}} to={path}><span className="text-red-400 inline-block my-4 text-lg">Learn more</span></Link>
+                      <Link state={{heading, text, image, reverse, path, highlights, extendedText, subHeading}} to={path}><span className="text-pink-600 inline-block my-4 text-lg">Learn more</span></Link>
                     </div>
                 </div>
               </div>
