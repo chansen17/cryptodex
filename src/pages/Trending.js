@@ -18,7 +18,7 @@ export default function Trending() {
         if(check) {
             setCoins(JSON.parse(check));
             setLoading(false);
-            console.log('coins in local storage', coins);
+            // console.log('coins in local storage', coins);
         }
         else {
             setLoading(true);
@@ -29,7 +29,7 @@ export default function Trending() {
             localStorage.setItem('coins', JSON.stringify(data));
             setCoins(data);
             setLoading(false);
-            console.log('created coins in local storage', coins);
+            // console.log('created coins in local storage', coins);
         }
     }
 

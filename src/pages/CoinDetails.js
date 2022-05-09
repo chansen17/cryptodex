@@ -29,7 +29,7 @@ export default function CoinDetails() {
         const data = await response.json();
         setPrices(data.prices);
         if(data) {
-            console.log('We got data', data.prices);
+            // console.log('We got data', data.prices);
             // setLoading(false);
         }
     }
@@ -43,7 +43,7 @@ export default function CoinDetails() {
     useEffect(() => {
         fetchCoinPrices(params.id);
         fetchCoinDetails(params.id);
-        console.log('coin details', coin);
+        // console.log('coin details', coin);
     }, [params.id, days]);
 
 

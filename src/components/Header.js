@@ -30,19 +30,19 @@ export default function Header() {
                 </li>
             </ul>
             {/* mobile menu */}
-            <div className={toggled ? "w-full h-[50vh] absolute top-0 left-0 flex justify-center items-center flex-col bg-slate-900 z-50 ease-in-out duration-200 py-6" : "absolute left-[-100%]"}>
+            <div className={toggled ? "w-full h-[50vh] absolute top-0 left-0 flex justify-center items-center flex-col bg-slate-900 z-50 ease-in-out duration-200 py-6 shadow-lg shadow-green-200/20" : "absolute left-[-100%]"}>
                 <div className="bg-slate-800 rounded-lg absolute top-5 right-5 flex items-center">
                     <span onClick={handleNavToggle} className="cursor-pointer p-4"><FaTimes className="text-white text-xl" /></span>
                 </div>
                 <ul className="flex flex-col">
-                    <li className="p-2 cursor-pointer">
-                        <Link to="/"><span className="text-green-300 font-medium tracking-wide text-2xl">Home</span></Link>
+                    <li onClick={() => handleNavToggle(!toggled)} className="p-2 cursor-pointer">
+                        <Link to="/"><span className="text-green-300 font-medium tracking-wide text-3xl">Home</span></Link>
                     </li>
-                    <li className="p-2 cursor-pointer">
-                        <Link to="/trending"><span className="text-green-300 font-medium tracking-wide text-2xl">Trending</span></Link>
+                    <li onClick={() => handleNavToggle(!toggled)} className="p-2 cursor-pointer">
+                        <Link to="/trending"><span className="text-green-300 font-medium tracking-wide text-3xl">Trending</span></Link>
                     </li>
-                    <li className="p-2 cursor-pointer">
-                        <Link to="/watchlist"><span className="text-green-300 font-medium tracking-wide text-2xl">Watchlist</span></Link>
+                    <li onClick={() => handleNavToggle(!toggled)} className="p-2 cursor-pointer">
+                        <Link to="/watchlist"><span className="text-green-300 font-medium tracking-wide text-3xl">Watchlist</span></Link>
                     </li>
                 </ul>
             </div>

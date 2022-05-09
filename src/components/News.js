@@ -23,10 +23,10 @@ export default function News() {
         }
 
         axios.request(options).then(response => {
-            console.log(response.data.articles);
+            // console.log(response.data.articles);
             setNews(response.data.articles);
         }).catch(error => {
-            console.log(error.message);
+            // console.log(error.message);
         });
 
         return () => {

@@ -5,7 +5,7 @@ import 'react-vertical-timeline-component/style.min.css';
 
 export default function FeatureDetails() {
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
   return (
     <div className="w-full min-h-screen bg-slate-900 text-slate-400">
         <div className="max-w-[1360px] mx-auto p-5">
