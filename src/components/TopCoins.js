@@ -25,6 +25,28 @@ export default function TopCoins() {
         const data = await response.json();
         setXrp(data)
       }
+
+      const fetchAll = () => {
+        const fetchBtc = async () => {
+          const response = await fetch(`https://api.coingecko.com/api/v3/coins/bitcoin`);
+          const data = await response.json();
+          setBtc(data)
+        }
+      
+        const fetchEth = async () => {
+          const response = await fetch(`https://api.coingecko.com/api/v3/coins/ethereum`);
+          const data = await response.json();
+          setEth(data)
+        }
+      
+        const fetchXrp = async () => {
+          const response = await fetch(`https://api.coingecko.com/api/v3/coins/ripple`);
+          const data = await response.json();
+          setXrp(data)
+        }
+
+        return fetchBtc,fetchEth,fetchXrp
+      }
     
       useEffect(() => {
         fetchBtc();
@@ -35,10 +57,11 @@ export default function TopCoins() {
   return (
     <div className="w-full min-h-[40vh] bg-slate-800 text-gray-300 p-5">
           <h2 className="text-2xl md:text-3xl heading-gradient py-6">Top coins</h2>
-        <section className="max-w-[1360px] mx-auto grid md:grid-cols-2">
-        <div className="md:text-left">
-          <h2 className="text-3xl md:text-4xl">Lorem, ipsum dolor.</h2>
-          <p className="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, aspernatur dicta? Dolores dolore aut molestiae aliquam.</p>
+        <section className="max-w-[1300px] mx-auto grid md:grid-cols-2">
+        <div className="max-w-xl mx-auto md:text-left">
+          <h2 className="text-3xl md:text-4xl">Top coins, alt coins, all coins</h2>
+          <p className="text-2xl">Don't settle for Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur Lorem ipsum dolor sit.</p>
+          <button onClick={fetchAll} className="main-btn mx-auto my-4">Update price</button>
         </div>
         <div className="flex items-center justify-center flex-wrap space-x-6 my-6 md:my-0">
             <div className="">

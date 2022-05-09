@@ -17,12 +17,12 @@
     @apply font-['Bangers'];
   }
 
-  button {
-    @apply text-white bg-gradient-to-br from-blue-400 to-red-500 py-3 px-4 rounded hover:-translate-y-2 transition-all duration-200
+  .main-btn {
+    @apply text-white bg-gradient-to-br from-blue-400 to-green-500 py-3 px-4 rounded hover:-translate-y-2 transition-all duration-200 cursor-pointer
   }
 
   .nav-btn {
-    @apply text-white bg-gradient-to-br from-blue-400 to-red-500 py-2 px-3 rounded duration-200
+    @apply text-white bg-gradient-to-br from-blue-400 to-green-500 py-2 px-3 rounded duration-200
   }
 
   .heading-gradient {
