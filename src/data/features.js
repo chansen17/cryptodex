@@ -1,3 +1,4 @@
+
 const features = [
     {
         sectionTitle: 'Your money, is truly yours',
@@ -13,19 +14,22 @@ const features = [
                 title: 'timeline titdsadas le',
                 subTitle: 'timeline dwqdads a das da',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2017'
+                date: '02/4/2017',
+                icon: 'left'
             },
             {
                 title: 'timeline tidsad dsadatle',
                 subTitle: 'timeline su dasdas dbtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2020'
+                date: '02/4/2020',
+                icon: 'right'
             },
             {
                 title: 'timeline dsadsadsad',
                 subTitle: 'timeline dsadassubtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2021'
+                date: '02/4/2021',
+                icon: 'left'
             },
         ]
     },
@@ -43,25 +47,29 @@ const features = [
                 title: 'timelindas dsadsad',
                 subTitle: 'dasdsadasdas subtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2021'
+                date: '02/4/2021',
+                icon: 'left'
             },
             {
                 title: 'timelindsadase title',
                 subTitle: 'timeline subtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2022'
+                date: '02/4/2022',
+                icon: 'right'
             },
             {
                 title: 'timeldsadsaine title',
                 subTitle: 'timeline subtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2022'
+                date: '02/4/2022',
+                icon: 'left'
             },
             {
                 title: 'timedasdasdasline title',
                 subTitle: 'timeline subtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2022'
+                date: '02/4/2022',
+                icon: 'right'
             },
         ]
     },
@@ -79,13 +87,15 @@ const features = [
                 title: 'timelids daada dsdasne title',
                 subTitle: 'timeline subtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2023'
+                date: '02/4/2023',
+                icon: 'left'
             },
             {
                 title: 'timelindsadase title',
                 subTitle: 'timeldisadasd  dasne subtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2023'
+                date: '02/4/2023',
+                icon: 'right'
             },
         ]
     },
@@ -103,19 +113,22 @@ const features = [
                 title: 'timelin das da dse title',
                 subTitle: 'timeline subtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2017'
+                date: '02/4/2017',
+                icon: 'left'
             },
             {
                 title: 'timels dsa das dsaine title',
                 subTitle: 'timeli das dane subtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2024'
+                date: '02/4/2024',
+                icon: 'right'
             },
             {
                 title: 'timeline das das dsa title',
                 subTitle: 'timeline  dasdsasubtitle',
                 plans: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-                date: '02/4/2024'
+                date: '02/4/2024',
+                icon: 'left'
             },
         ]
     },

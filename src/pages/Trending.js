@@ -44,7 +44,7 @@ export default function Trending() {
         <div className="fixed bottom-0 w-full h-[15vh] bg-gradient-to-t from-slate-900" />
         <div id="container" className="max-w-[1500px] mx-auto p-5">
             <div className="max-w-5xl mx-auto my-12">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold"><span className="text-gray-200">The Easiest Way to</span> <br/> <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-green-300">Track Multiple Currencies</span></h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold"><span className="text-gray-200">The Easiest</span> Way to <br/> <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-green-300">Track Multiple Currencies</span></h2>
                 <p className="my-6 text-xl text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/> Hic recusandae voluptatem aliquam.</p>
             </div>
             {/* input container */}
