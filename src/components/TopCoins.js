@@ -60,7 +60,7 @@ export default function TopCoins() {
         <section className="max-w-[1300px] mx-auto grid md:grid-cols-2">
         <div className="max-w-xl mx-auto md:text-left">
           <h2 className="text-3xl md:text-4xl">Top coins, alt coins, all coins</h2>
-          <p className="text-2xl">Don't settle for Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur Lorem ipsum dolor sit.</p>
+          <p className="text-xl md:text-2xl">Don't settle for Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <button onClick={fetchAll} className="main-btn mx-auto my-4">Update price</button>
         </div>
         <div className="flex items-center justify-center flex-wrap space-x-6 my-6 md:my-0">
