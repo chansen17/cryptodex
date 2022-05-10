@@ -9,43 +9,21 @@ export default function TopCoins() {
   const [xrp, setXrp] = useState('');
 
     const fetchBtc = async () => {
-        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.coingecko.com/api/v3/coins/bitcoin`);
+        const response = await fetch(`https://api.coingecko.com/api/v3/coins/bitcoin`);
         const data = await response.json();
         setBtc(data)
       }
     
       const fetchEth = async () => {
-        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.coingecko.com/api/v3/coins/ethereum`);
+        const response = await fetch(`https://api.coingecko.com/api/v3/coins/ethereum`);
         const data = await response.json();
         setEth(data)
       }
     
       const fetchXrp = async () => {
-        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.coingecko.com/api/v3/coins/ripple`);
+        const response = await fetch(`https://api.coingecko.com/api/v3/coins/ripple`);
         const data = await response.json();
         setXrp(data)
-      }
-
-      const fetchAll = () => {
-        const fetchBtc = async () => {
-          const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.coingecko.com/api/v3/coins/bitcoin`);
-          const data = await response.json();
-          setBtc(data)
-        }
-      
-        const fetchEth = async () => {
-          const response = await fetch(`https://api.coingecko.com/api/v3/coins/ethereum`);
-          const data = await response.json();
-          setEth(data)
-        }
-      
-        const fetchXrp = async () => {
-          const response = await fetch(`https://api.coingecko.com/api/v3/coins/ripple`);
-          const data = await response.json();
-          setXrp(data)
-        }
-
-        return fetchBtc,fetchEth,fetchXrp
       }
     
       useEffect(() => {
@@ -61,7 +39,7 @@ export default function TopCoins() {
         <div className="max-w-xl mx-auto md:text-left">
           <h2 className="text-3xl md:text-4xl">Top coins, alt coins, all coins</h2>
           <p className="text-xl md:text-2xl">Don't settle for Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <button onClick={fetchAll} className="main-btn mx-auto my-4">Update price</button>
+          <button className="main-btn mx-auto my-4">Update price</button>
         </div>
         <div className="flex items-center justify-center flex-wrap space-x-6 my-6 md:my-0">
             <div className="">

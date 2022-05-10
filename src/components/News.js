@@ -37,8 +37,8 @@ export default function News() {
   return (
     <div className="max-w-sm md:max-w-lg mx-auto px-8">
     {news ? news.slice(0,10).map(article => (
-        <a target="_blank" rel="noreferrer" href={article.link} className="brightness-95 hover:brightness-100">
-            <div key={article._id} className="">
+        <a key={article._id} target="_blank" rel="noreferrer" href={article.link} className="brightness-95 hover:brightness-100">
+            <div className="">
                 <h2 className="text-xl md:text-2xl text-left my-2">{article.title}</h2>
                 <p className="text-green-200 text-lg truncate">{article?.excerpt}</p>
             </div>

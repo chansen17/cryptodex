@@ -2,8 +2,13 @@ import { useState, useEffect } from 'react';
 import {NavLink } from 'react-router-dom';
 import { useWindowWidth } from '@react-hook/window-size'
 import { FaDollarSign, FaPercent, FaPercentage } from 'react-icons/fa';
+
+import 'chart.js/auto';
+import { Chart } from 'react-chartjs-2';
+
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { SpinnerCircular } from 'spinners-react';
 
 export default function Trending() {
     const width = useWindowWidth();
@@ -18,7 +23,6 @@ export default function Trending() {
         if(check) {
             setCoins(JSON.parse(check));
             setLoading(false);
-            // console.log('coins in local storage', coins);
         }
         else {
             setLoading(true);
@@ -29,7 +33,6 @@ export default function Trending() {
             localStorage.setItem('coins', JSON.stringify(data));
             setCoins(data);
             setLoading(false);
-            // console.log('created coins in local storage', coins);
         }
     }
 
@@ -53,9 +56,9 @@ export default function Trending() {
             </div>
             {/* end input container */}
             <section className="py-6">
-            {coins ? coins?.map((coin) => (
+            {coins.length ? coins?.map((coin) => (
             <NavLink to={`/details/${coin.id}`} key={coin.id}>
-                <div className="grid gap-2 grid-cols-3 md:grid-cols-4 text-left text-slate-50 font-light text-sm md:text-lg lg:text-xl my-6 py-6 px-2 rounded-xl cursor-pointer border-b-2 border-gray-800/70 hover:border-gray-700/70">
+                <div className="grid gap-2 grid-cols-3 md:grid-cols-4 lg:grid-cols-5 text-left text-slate-50 font-light text-sm md:text-lg lg:text-xl my-6 py-6 px-2 rounded-xl cursor-pointer border-b-2 border-gray-800/70 hover:border-gray-700/70">
                     <div className="flex items-center space-x-4">
                         <img className="w-6 h-6 md:w-12 md:h-12 object-cover" src={coin.image} alt={`${coin.name} logo`} />
                         <div className="">
@@ -64,19 +67,42 @@ export default function Trending() {
                         </div>
                     </div>
                     {/* price */}
-                    <div className="font-semibold flex flex-col items-start">
+                    <div className="font-semibold flex flex-col items-center justify-center">
                         <p className="font-light">Current Price</p>
                         <p className={coin.price_change_24h > 0 ? "flex items-center text-green-300" : "flex items-center text-red-300"}><FaDollarSign/>{coin.current_price}</p>
                     </div>
                     {/* end prcice */}
                     {/* marketcap */}
-                    <div className=" md:inline-block flex flex-col items-center">
+                    <div className=" md:inline-flex flex-col items-center justify-center">
                         <p>Market Cap</p>
                         <p className="font-semibold flex items-center">{coin.market_cap.toLocaleString()}</p>
                     </div>
                     {/* end marketcap */}
+                    {/* Chart */}
+                    <div className="hidden lg:inline-flex flex-col items-center justify-center">
+                    {!coins ? (
+                        <SpinnerCircular />
+                    ) : (
+                        <Chart 
+                            redraw={false}
+                            className=""
+                            type="line"
+                            data={{
+                                labels: ["24h low", "24h high", "Current price"],
+                                datasets: [
+                                    {
+                                        data: [coin.low_24h, coin.high_24h, coin.current_price],
+                                        label: `(${coin.symbol}) 24h low and high`,
+                                        borderColor: 'lightgreen'
+                                    }
+                                ]
+                            }}
+                        />
+                    )}
+                    </div>
+                    {/* End chart */}
                     {/* 24h change */}
-                    <div className="hidden md:inline-block flex-col items-center">
+                    <div className="hidden md:inline-flex flex-col items-center justify-center">
                         <p className="flex justify-end">24h change</p>
                         <p className={coin.market_cap_change_percentage_24h > 0 ? "font-semibold flex items-center justify-end text-green-200" : "font-semibold flex items-center justify-end text-red-300"}>% {" "}{coin.market_cap_change_percentage_24h.toFixed(2)}</p>
                     </div>
@@ -84,7 +110,7 @@ export default function Trending() {
                 </div>
             </NavLink>
             )) : <div>
-                <Skeleton count={3} baseColor="#cecece" />
+                <Skeleton baseColor="#444" />
             </div> }
             </section>
         </div>
