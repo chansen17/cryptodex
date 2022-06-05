@@ -35,7 +35,7 @@ export default function TopCoins() {
   return (
     <div className="w-full min-h-[40vh] bg-slate-800 text-gray-300 p-5">
           <h2 className="text-2xl md:text-3xl heading-gradient py-6">Top coins</h2>
-        <section className="max-w-[1300px] mx-auto grid md:grid-cols-2">
+        <section className="max-w-[1100px] mx-auto grid md:grid-cols-2 px-8">
         <div className="max-w-xl mx-auto md:text-left">
           <h2 className="text-3xl md:text-4xl">Top coins, alt coins, all coins</h2>
           <p className="text-xl md:text-2xl">Don't settle for Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>

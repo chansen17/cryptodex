@@ -9,7 +9,7 @@ export default function Header({status}) {
 
   return (
     <nav className="w-full bg-slate-900 text-gray-400">
-        <div className="max-w-[1700px] mx-auto flex items-center justify-between p-5">
+        <div className="max-w-[1700px] mx-auto flex items-center justify-between py-8 px-12">
             <div>
                 <Link to="/">
                     <h2 className="text-2xl font-semibold flex items-center">
