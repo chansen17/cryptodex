@@ -7,6 +7,8 @@ import Moment from 'react-moment';
 import { SpinnerInfinity } from 'spinners-react';
 import Select from 'react-select';
 import News from '../components/News';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
+
 
 // const daysOptions = [
 //     { value: '7', label: '7' },

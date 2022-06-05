@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaCoins, FaBars, FaTimes } from 'react-icons/fa';
+import { FaCoins, FaBars, FaTimes, FaDotCircle } from 'react-icons/fa';
 
-export default function Header() {
+export default function Header({status}) {
     const [toggled, setToggled] = useState(false);
 
     const handleNavToggle = () => setToggled(!toggled);
@@ -19,6 +19,9 @@ export default function Header() {
                 </Link>
             </div>
             <ul className="flex items-center justify-center space-x-4">
+                <li className="hidden md:flex p-2 cursor-auto">
+                    <span className="relative flex items-center">A<span className="mr-1">PI Status </span><FaDotCircle className="text-green-400 text-xs absolute -top-3 -right-3 animate-pulse" />{status.gecko_says}</span>
+                </li>
                 <li className="hidden md:flex p-2 cursor-pointer">
                     <Link to="/trending"><span className="font-medium tracking-wide text-lg :text-red-300">Trending</span></Link>
                 </li>
@@ -43,6 +46,9 @@ export default function Header() {
                     </li>
                     <li onClick={() => handleNavToggle(!toggled)} className="p-2 cursor-pointer">
                         <Link to="/watchlist"><span className="text-green-300 font-medium tracking-wide text-3xl">Watchlist</span></Link>
+                    </li>
+                    <li className="p-2 cursor-pointer">
+                        <span className="relative flex items-center">A<span className="mr-1">PI Status </span><FaDotCircle className="text-green-400 text-xs absolute -top-3 -right-3 animate-pulse" />{status.gecko_says}</span>
                     </li>
                 </ul>
             </div>
