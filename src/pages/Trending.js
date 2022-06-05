@@ -61,7 +61,7 @@ export default function Trending() {
         <div id="container" className="max-w-[1500px] mx-auto p-5">
             <div className="max-w-5xl mx-auto my-12">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold"><span className="text-gray-200">The Easiest Way to</span> <br/> <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-green-300">Track Multiple Currencies</span></h2>
-                <p className="my-6 text-xl text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/> Hic recusandae voluptatem aliquam.</p>
+                <p className="my-6 text-xl text-gray-400">Research cryptocurrencies, study meta data and charts.<br/></p>
             </div>
             {/* input container */}
             <div className="my-12 max-w-sm mx-auto text-gray-300">
@@ -111,8 +111,8 @@ export default function Trending() {
                         //         ]
                         //     }}
                         // />
-                        <div className="w-full z-20">
-                        <Sparklines data={coin.sparkline_in_7d.price} margin={5}>
+                        <div className="w-full">
+                        <Sparklines data={coin.sparkline_in_7d.price}>
                             <SparklinesLine color="cyan" style={{ fill: "cyan" }} />
                         </Sparklines>
                         </div>
