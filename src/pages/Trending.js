@@ -113,7 +113,7 @@ export default function Trending() {
                         // />
                         <div className="w-full">
                         <Sparklines data={coin.sparkline_in_7d.price}>
-                            <SparklinesLine color="cyan" style={{ fill: "cyan" }} />
+                            <SparklinesLine color="cyan" style={{ fill: "none" }} />
                         </Sparklines>
                         </div>
                     )}
